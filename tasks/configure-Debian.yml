@@ -1,0 +1,36 @@
+---
+- name: Set tomcat catalina properties.
+  template:
+    src: "catalina.properties.j2"
+    dest: "{{ tomcat_server_root }}/catalina.properties"
+    owner: root
+    group: tomcat
+    mode: 0640
+  notify: restart tomcat
+
+- name: Set tomcat Context.
+  template:
+    src: "context.xml.j2"
+    dest: "{{ tomcat_server_root }}/context.xml"
+    owner: root
+    group: tomcat
+    mode: 0640
+  notify: restart tomcat
+
+- name: Set tomcat logging properties.
+  template:
+    src: "logging.properties.j2"
+    dest: "{{ tomcat_server_root }}/logging.properties"
+    owner: root
+    group: tomcat
+    mode: 0640
+  notify: restart tomcat
+
+- name: Set server configuration.
+  template:
+    src: "server.xml.j2"
+    dest: "{{ tomcat_server_root }}/server.xml"
+    owner: root
+    group: tomcat
+    mode: 0640
+  notify: restart tomcat

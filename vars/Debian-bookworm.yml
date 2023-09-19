@@ -1,0 +1,5 @@
+---
+tomcat_service: tomcat10
+tomcat_daemon: tomcat10
+__tomcat_packages:
+  - tomcat10

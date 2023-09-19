@@ -1,0 +1,6 @@
+---
+- name: Update apt cache.
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Ensure Tomcat is installed on Debian.
+  apt: "name={{ tomcat_packages }} state={{ tomcat_packages_state }}"

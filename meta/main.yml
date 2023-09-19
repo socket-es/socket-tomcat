@@ -1,0 +1,28 @@
+---
+galaxy_info:
+  role_name: tomcat
+  author: moncada
+  description: tomcat for Linux.
+  company: Socket Sistemas Informáticos Alternativos
+
+  issue_tracker_url: https://github.com/socket-es/socket-tomcat/issues
+
+  license: license (BSD, MIT)
+  min_ansible_version: "2.4"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+    - name: Ubuntu
+      versions:
+        - jammy
+
+  galaxy_tags:
+    - web
+    - tomcat
+    - webserver
+    - html
+    - httpd
+dependencies: []
+
+allow_duplicates: true

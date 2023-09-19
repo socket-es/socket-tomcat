@@ -1,0 +1,31 @@
+---
+tomcat_server_root: /etc/{{ tomcat_service }}
+tomcat_catalina_properties_common_loader: '"${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar"'
+tomcat_context_xml_addons:
+tomcat_logging_properties_handlers: "1catalina.org.apache.juli.AsyncFileHandler, 2localhost.org.apache.juli.AsyncFileHandler, java.util.logging.ConsoleHandler"
+tomcat_logging_properties_handlers_addons:
+tomcat_server_port: -1
+tomcat_server_connector: '<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />'
+tomcat_server_engine: '<Engine name="Catalina" defaultHost="localhost">'
+tomcat_server_logs_directory: "logs"
+tomcat_server_logs_rotatable: "true"
+tomcat_server_logs_prefix: "localhost_access_log"
+tomcat_server_logs_suffix: ".txt"
+tomcat_server_logs_pattern: "%h %l %u %t &quot;%r&quot; %s %b"
+tomcat_server_valve_addons: 
+tomcat_run_user: "tomcat"
+tomcat_run_group: "tomcat"
+
+# Set initial tomcat state. Recommended values: `started` or `stopped`
+tomcat_state: started
+
+# Set initial tomcat service status. Recommended values: `yes` or `no`
+tomcat_enabled: yes
+
+
+# Set tomcat state when configuration changes are made. Recommended values:
+# `restarted` or `reloaded`
+tomcat_restart_state: restarted
+
+# tomcat packages and modules state; use `present` to make sure it's installed, or `latest`
+tomcat_packages_state: present
