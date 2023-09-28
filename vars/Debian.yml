@@ -1,4 +1,5 @@
 ---
+
 tomcat_daemon_path: /usr/share/{{ tomcat_service }}/bin
 tomcat_server_root: /etc/{{ tomcat_service }}
 tomcat_conf_path: /etc/{{ tomcat_service }}

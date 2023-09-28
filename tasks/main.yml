@@ -9,22 +9,11 @@
 
 - name: Define tomcat_packages.
   set_fact:
-    apache_packages: "{{ __tomcat_packages | list }}"
+    tomcat_packages: "{{ __tomcat_packages | list }}"
   when: tomcat_packages is not defined
 
 # Setup/install tasks.
 - include_tasks: "setup-{{ ansible_os_family }}.yml"
-
-# Figure out what version of Tomcat is installed.
-- name: Get installed version of Tomcat.
-  command: "{{ tomcat_daemon_path }}/version.sh | grep  version"
-  changed_when: false
-  check_mode: false
-  register: _tomcat_version
-
-- name: Create tomcat_version variable.
-  set_fact:
-    tomcat_version: "{{ _tomcat_version.stdout.split()[3].split('/')[1].split('.')[0] }}"
 
 - name: Include Tomcat jammy variables.
   include_vars: "vars/Debian-jammy.yml"

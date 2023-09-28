@@ -1,5 +1,6 @@
 ---
 tomcat_service: tomcat9
 tomcat_daemon: tomcat9
+tomcat_version: 9
 __tomcat_packages:
   - tomcat9
